@@ -1,7 +1,7 @@
 import Article from 'src/components/Article'
 export const QUERY = gql`
-  query ArticlesQuery {
-    articles: posts {
+  query ArticleQuery($id: Int!) {
+    article: post(id: $id) {
       id
       title
       body
@@ -18,12 +18,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ articles }) => {
-  return (
-    <ul>
-      {articles.map((article) => (
-        <Article key={article.id} article={article} />
-      ))}
-    </ul>
-  )
+export const Success = ({ article }) => {
+  return <Article article={article} />
 }

@@ -9,6 +9,10 @@ const PostsLayout = ({ children }) => {
         <h1 className="rw-heading rw-heading-primary">
           <Link to={routes.posts()} className="rw-link">
             Posts
+          </Link>{' '}
+          |
+          <Link to={routes.home()} className="rw-link">
+            Home
           </Link>
         </h1>
         <Link to={routes.newPost()} className="rw-button rw-button-green">
